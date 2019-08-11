@@ -21,5 +21,7 @@ export default class Home extends Vue {
   public get username(): string {
     return this.$store.getters.account ? this.$store.getters.account.login : '';
   }
+  install(Vue: any, options: any){
+    Vue.component('form-conacyt', HelloWorldComponent);
+  }
 }
-Vue.component('form-conacyt', HelloWorldComponent);
