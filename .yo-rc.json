@@ -1,0 +1,50 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "mx.conacyt.miic"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "ciencia",
+    "packageName": "mx.conacyt.miic",
+    "packageFolder": "mx/conacyt/miic",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzM5ZWNkYmYwYWI0OGFlMjgyYTUwYmE2YTExYjQ5MDM4MjJjMTNhMzI0NTliNzM0NmRlOGRjYzkxMDZlN2RlODVjYzE3ZTk0YjYxMTA2MDBkNzQzYjYzODMyMDlmYjM0MDVhN2I2NzQzNTAwOWJmN2YyYmRhMjk3NDkzYmExMTM=",
+    "testFrameworks": ["cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-vuejs",
+        "version": "1.1.0"
+      }
+    ],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprint": "generator-jhipster-vuejs",
+    "blueprintVersion": "1.1.0"
+  },
+  "generator-jhipster-vuejs": {
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "ciencia",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "vue",
+    "clientTheme": "none",
+    "clientThemeVariant": ""
+  }
+}

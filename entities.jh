@@ -1,0 +1,253 @@
+entity Convocatoria {
+    nombre String,
+    clave String,
+    annioFiscal Integer
+}
+
+entity Solicitud {
+    clave String
+}
+
+/**
+ * https://stackoverflow.com/questions/33334746/using-inheritance-on-jhipster-entities
+ */
+entity Proyecto {
+    titulo String,
+    resumen TextBlob,
+    palabrasclave String,
+    objetivo TextBlob,
+    antecedentes TextBlob,
+    descripcion TextBlob,
+    hipotesis TextBlob,
+    metodologia TextBlob,
+    resultados TextBlob,
+    mecanismos TextBlob,
+    acciones TextBlob,
+    bibliografia TextBlob,
+    multidisciplinaria Boolean
+}
+
+entity DocumentoProyecto {
+    contentype String,
+    contenido Blob
+}
+
+entity DocumentoParticipante {
+    contentype String,
+    contenido Blob
+}
+
+entity Etapa {
+    numero Integer,
+    nombre String,
+    descripcion TextBlob,
+    duracion Integer
+}
+
+entity ObjetivoEspecifico {
+    nombre String,
+    descripcion TextBlob
+}
+
+entity Meta {
+    nombre String,
+    descripcion TextBlob
+}
+
+entity Actividad {
+    nombre String,
+    descripcion TextBlob
+}
+
+entity Gasto {
+    importe Double,
+    justificacion TextBlob
+}
+
+entity PersonaFisica {
+    cvu String,
+    titulo String,
+    nombre String,
+    rfc String,
+    curp String,
+    genero String,
+    correo String,
+    nivelsni String,
+    rcea String,
+    apellidoPaterno String,
+    apellidoMaterno String
+}
+
+entity PersonaMoral {
+    razonSocial String,
+    reniecyt String,
+    domicilio String
+}
+
+entity PropuestaEvaluador {
+    cvu String,
+    titulo String,
+    nombre String,
+    rfc String,
+    curp String,
+    genero String,
+    correo String,
+    nivelsni String,
+    rcea String,
+    apellidoPaterno String,
+    apellidoMaterno String,
+    idCampo Long,
+    campo String,
+    idDisciplina Long,
+    disciplina String,
+    idSubdisciplina Long,
+    subdisciplina String,
+    especialidad String
+}
+
+entity Domicilio {
+    direccion String
+}
+
+/**
+ * Catálogos
+ */
+
+entity Modalidad {
+    nombre String,
+    descripcion String,
+    montoMaximo Double,
+    duracion Integer,
+    numeroEtapas Integer,
+    fechaInicio LocalDate,
+    fechaFin LocalDate
+}
+
+entity TipoDocumento {
+    nombre String,
+    descripcion String
+}
+
+entity AreaDeConocimiento {
+    idCampo Long,
+    campo String,
+    idDisciplina Long,
+    disciplina String,
+    idSubdisciplina Long,
+    subdisciplina String,
+    especialidad String
+}
+
+entity RolParticipante {
+    nombre String,
+    descripcion String
+}
+
+entity TipoRecurso {
+    nombre String,
+    descripcion String
+}
+
+entity TipoGasto {
+    nombre String,
+    descripcion String
+}
+
+entity Rubro {
+    nombre String,
+    descripcion String
+}
+
+entity FaseSolicitud {
+    fechaInicio LocalDate,
+    fechaFin LocalDate
+}
+
+entity TipoFase{
+    nombre String,
+    descripcion String
+}
+
+entity EstadoSolicitud {
+    nombre String,
+    descripcion String
+}
+
+entity Genero {
+    nombre String,
+    descripcion String
+}
+
+entity EntidadFederativa {
+    nombre String,
+    descripcion String
+}
+
+entity Pais{
+    nombre String,
+    descripcion String
+}
+
+entity GradoAcademico {
+    nombre String,
+    descripcion String
+}
+
+entity TipoDomicilio {
+    nombre String,
+    descripcion String
+}
+
+entity Producto {
+    nombre String,
+    descripcion String
+}
+
+/**
+ * Asociaciones
+ */
+
+entity RegistroPersona {
+    catedratico Boolean
+}
+
+entity RegistroActividad {
+
+}
+
+entity RegistroEvaluador {
+
+}
+
+relationship ManyToOne {
+  Solicitud to Convocatoria
+  Solicitud{fase} to FaseSolicitud,
+  Solicitud{estado} to EstadoSolicitud,
+  Proyecto to Modalidad,
+  DocumentoProyecto to TipoDocumento,
+  DocumentoProyecto to Proyecto
+  DocumentoParticipante to TipoDocumento,
+  Etapa to Proyecto,
+  ObjetivoEspecifico to Proyecto,
+  Meta to Proyecto,
+  Meta to ObjetivoEspecifico,
+  Actividad to Proyecto,
+  Actividad to Meta,
+  Gasto to Proyecto
+  Gasto to Etapa,
+  Gasto to TipoRecurso,
+  Gasto to TipoGasto,
+  Gasto to Rubro,
+  Gasto to PersonaFisica,
+  Rubro to TipoGasto
+}
+
+relationship OneToOne {
+  User to PersonaFisica  // most be the owner
+}
+
+relationship ManyToMany {
+    Etapa{objetivo} to ObjetivoEspecifico{etapa},
+    Actividad to Producto
+ }
+ 
