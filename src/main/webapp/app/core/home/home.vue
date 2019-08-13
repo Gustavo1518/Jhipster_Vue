@@ -1,5 +1,6 @@
 <template>
     <div class="home row">
+        <form-conacyt></form-conacyt>
         <div class="col-md-3">
             <span class="hipster img-fluid rounded"></span>
         </div>
@@ -26,8 +27,6 @@
                 If you have any question on JHipster:
             </p>
         </div>
-        <h1>Formulario</h1>
-        <form-conacyt></form-conacyt>
     </div>
 </template>
 
