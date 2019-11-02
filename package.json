@@ -17,7 +17,7 @@
     "date-fns": "2.0.0-alpha.26",
     "git": "^0.1.5",
     "proyecto": "git+https://github.com/Gustavo1518/install-form-git-npm.git",
-    "swagger-ui": "2.2.10",
+    "swagger-ui": "3.23.11",
     "vue": "2.6.10",
     "vue-class-component": "7.0.2",
     "vue-cookie": "1.1.4",
