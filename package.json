@@ -13,7 +13,7 @@
     "@fortawesome/vue-fontawesome": "0.1.5",
     "axios": "0.19.0",
     "bootstrap": "4.3.1",
-    "bootstrap-vue": "2.0.0-rc.11",
+    "bootstrap-vue": "2.0.0-rc.12",
     "date-fns": "2.0.0-alpha.26",
     "git": "^0.1.5",
     "proyecto": "git+https://github.com/Gustavo1518/install-form-git-npm.git",
